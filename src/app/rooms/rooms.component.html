@@ -1,3 +1,5 @@
 <p>{{ hotelName }}</p>
 <div [innerText]="location" [hidden]="!showLocation"></div>
+
+<div *ngIf="room1.totalRooms === 10">yaaas</div>
 <button (click)="toggle()">{{ hotelName }}</button>
