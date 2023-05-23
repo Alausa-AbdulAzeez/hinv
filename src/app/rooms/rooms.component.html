@@ -2,6 +2,12 @@
 <div [innerText]="location" [hidden]="!showLocation"></div>
 
 <div *ngIf="room.availableRooms > 0">
-  <app-rooms-list [rooms]="roomList"></app-rooms-list>
+  <app-rooms-list
+    [rooms]="roomList"
+    (selectedRoom)="selectRoom($event)"
+  ></app-rooms-list>
+  <div *ngIf="selectedRoom">
+    {{ selectedRoom | json }}
+  </div>
 </div>
 <button (click)="toggle()">{{ hotelName }}</button>

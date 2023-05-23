@@ -18,6 +18,7 @@ export class RoomsComponent implements OnInit {
   };
 
   roomList: RoomList[] = [];
+  selectedRoom?: RoomList;
 
   constructor() {}
 
@@ -46,5 +47,9 @@ export class RoomsComponent implements OnInit {
 
   toggle() {
     this.showLocation = !this.showLocation;
+  }
+
+  selectRoom(room: RoomList) {
+    this.selectedRoom = room;
   }
 }

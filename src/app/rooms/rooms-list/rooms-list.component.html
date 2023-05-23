@@ -13,5 +13,8 @@
     <td>{{ room.price | currency : "NGN" }}</td>
     <td>{{ room.amenities | lowercase }}</td>
     <td>{{ room.checkinTime | date : "dd-MMM-yyyy" }}</td>
+    <td>
+      <button (click)="selectRoom(room)">Select</button>
+    </td>
   </tr>
 </table>
