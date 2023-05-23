@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Room, RoomList } from './rooms';
 
 @Component({
@@ -6,7 +6,7 @@ import { Room, RoomList } from './rooms';
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss'],
 })
-export class RoomsComponent {
+export class RoomsComponent implements OnInit {
   hotelName = 'Hotel Clinton';
   showLocation = true;
 
@@ -17,26 +17,32 @@ export class RoomsComponent {
     bookedRooms: 3,
   };
 
-  roomList: RoomList[] = [
-    {
-      roomNumber: 1,
-      roomType: 'Delexe Room',
-      amenities: 'WIFI,TV ',
-      price: 500,
-      photo: 'a.jpg',
-      checkinTime: new Date('11-Nov-2022'),
-      checkoutTime: new Date('12-Nov-2022'),
-    },
-    {
-      roomNumber: 2,
-      roomType: 'Delexe ',
-      amenities: 'WIFI',
-      price: 300,
-      photo: 'a.jpg',
-      checkinTime: new Date('11-Nov-2022'),
-      checkoutTime: new Date('12-Nov-2022'),
-    },
-  ];
+  roomList: RoomList[] = [];
+
+  constructor() {}
+
+  ngOnInit(): void {
+    this.roomList = [
+      {
+        roomNumber: 1,
+        roomType: 'Delexe Room',
+        amenities: 'WIFI,TV ',
+        price: 500,
+        photo: 'a.jpg',
+        checkinTime: new Date('11-Nov-2022'),
+        checkoutTime: new Date('12-Nov-2022'),
+      },
+      {
+        roomNumber: 2,
+        roomType: 'Delexe ',
+        amenities: 'WIFI',
+        price: 300,
+        photo: 'a.jpg',
+        checkinTime: new Date('11-Nov-2022'),
+        checkoutTime: new Date('12-Nov-2022'),
+      },
+    ];
+  }
 
   toggle() {
     this.showLocation = !this.showLocation;
