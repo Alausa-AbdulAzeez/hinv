@@ -20,6 +20,8 @@ export class RoomsComponent implements OnInit {
   roomList: RoomList[] = [];
   selectedRoom?: RoomList;
 
+  title: string = 'ROOMS LIST';
+
   constructor() {}
 
   ngOnInit(): void {
@@ -47,6 +49,7 @@ export class RoomsComponent implements OnInit {
 
   toggle() {
     this.showLocation = !this.showLocation;
+    this.title = 'roooommmm';
   }
 
   selectRoom(room: RoomList) {

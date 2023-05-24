@@ -5,6 +5,7 @@
   <app-rooms-list
     [rooms]="roomList"
     (selectedRoom)="selectRoom($event)"
+    [title]="title"
   ></app-rooms-list>
   <div *ngIf="selectedRoom">
     {{ selectedRoom | json }}
